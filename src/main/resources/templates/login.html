@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Login</title>
+<link rel="stylesheet" th:href="@{/etc/css/login.css}" href="../../css/login.css" />
+</head>
+<body onload="document.username.focus();">
+	<div class="container">
+		<section id="content">
+			<form th:action="@{/login}" method="POST" class="form-horizontal">
+				<h1>登录窗口</h1>
+				<div>
+					<input type="text" placeholder="Enter Any Username" name="username" id="username" />
+				</div>
+				<div>
+					<input type="password" placeholder="Enter Any Password" name="password" id="password" />
+				</div>
+				<div>
+					<input type="submit" value="登录" />
+				</div>
+			</form>
+			<div class="button">
+				<a th:if="${param.logout}" href="#">
+					You have been logged out
+				</a>
+				<a th:if="${param.error}" href="#">
+					There was an error, please try again
+				</a>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

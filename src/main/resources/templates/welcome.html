@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+<head>
+<title>Task List</title>
+</head>
+<body>
+	<div layout:fragment="contents">
+		<!-- BEGIN PAGE HEADER-->
+		<h3 class="page-title">
+		首页 <small>一个空的页面</small>
+		</h3>
+		<div class="page-bar">
+			<ul class="page-breadcrumb">
+				<li>
+					<i class="fa fa-home"></i>
+					<a href="index.html">Home</a>
+					<i class="fa fa-angle-right"></i>
+				</li>
+				<li>
+					<a href="#">Page Layouts</a>
+					<i class="fa fa-angle-right"></i>
+				</li>
+				<li>
+					<a href="#">Blank Page</a>
+				</li>
+			</ul>
+			<div class="page-toolbar">
+				<div class="btn-group pull-right">
+					<button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+					排序 <i class="fa fa-angle-down"></i>
+					</button>
+					<ul class="dropdown-menu pull-right" role="menu">
+						<li th:each="entry : ${sortTypes}">
+							<a th:href="@{${page.url}(sortType=${entry.key})}" th:text="${entry.value}">....</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- END PAGE HEADER-->
+		<!-- BEGIN PAGE CONTENT-->
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<td>ID</td>
+							<td>Title</td>
+							<td>Des</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="tasks : ${page.content}">
+						    <td th:text="${tasks.id}">....</td>
+						    <td th:text="${tasks.title}">....</td>
+						    <td th:text="${tasks.description}">....</td>
+						</tr>
+					</tbody>
+				</table>
+				<nav th:replace="common/pagination :: paginationbar">....</nav>
+			</div>
+		</div>
+		<!-- END PAGE CONTENT-->
+	</div>
+</body>
+</html>

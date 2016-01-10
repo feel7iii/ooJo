@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+<head>
+<title>Prototype Page</title>
+</head>
+<body>
+	<div layout:fragment="contents"></div>
+<div layout:fragment="pagexPlugins"></div>
+<div layout:fragment="pagevPlugins"></div>
+<script layout:fragment="script">
+	jQuery(document).ready(function() {       
+		// initiate layout and plugins
+		Metronic.init(); // init metronic core components
+		Layout.init(); // init current layout
+		Demo.init(); // init demo features
+	}); 
+</script>
+</body>
+</html>

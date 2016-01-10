@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>文件上传</title>
+	<link th:href="@{/mui/assets/global/plugins/bootstrap/css/bootstrap.min.css}" href="../../static/mui/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link th:href="@{/oth/bootstrapdialog/css/bootstrap-dialog.min.css}" href="../../static/oth/bootstrapdialog/css/bootstrap-dialog.min.css" rel="stylesheet" type="text/css"/>
+	<link th:href="@{/oth/dropzone/css/dropzone.css}" href="../../static/oth/dropzone/css/dropzone.css" rel="stylesheet" type="text/css"/>
+	<link th:href="@{/oth/dropzone/css/style.css}" href="../../static/oth/dropzone/css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<form id="dropzone-form" class="dropzone" enctype="multipart/form-data">
+					<div class="dz-default dz-message file-dropzone text-center well col-md-12">
+						<span class="glyphicon glyphicon-paperclip"></span>
+						<span>将文件拖拽到区域位置</span><br/> 
+						<span>或者点击上传</span>
+					</div>
+					<div class="dropzone-previews"></div>
+				</form>
+				<hr/>
+				<button id="upload-button" class="btn btn-success">上传文件</button>
+				<a class="pull-right" th:href="@{/upload/list}"> 
+					<button class="btn">查看所有上传文件</button>
+				</a>
+			</div>
+		</div>
+	</div>
+	<script th:src="@{/mui/assets/global/plugins/jquery.min.js}" src="../../static/mui/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+	<script th:src="@{/oth/bootstrapdialog/js/bootstrap-dialog.min.js}" src="../../static/oth/bootstrapdialog/js/bootstrap-dialog.min.js" type="text/javascript"></script>
+	<script th:src="@{/oth/dropzone/js/app.js}" src="../../static/oth/dropzone/js/app.js" type="text/javascript"></script>
+	<script th:src="@{/oth/dropzone/js/dropzone.min.js}" src="../../static/oth/dropzone/js/dropzone.min.js" type="text/javascript"></script>
+</body>
+</html>

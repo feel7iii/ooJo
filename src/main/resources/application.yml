@@ -1,0 +1,84 @@
+# Server Port
+server:
+  port: 8999
+  
+spring:
+# APPLICATION NAME
+  application:
+    name: ooJo
+
+# SPRIGN BOOT ADMIN 
+    boot:
+      admin:
+        url: http://127.0.0.1:8777
+    
+# HTTP encoding (HttpEncodingProperties)
+  http:
+    encoding:
+      charset:  UTF-8
+
+# APPLICATION SETTINGS (SpringApplication
+  main:
+    show-banner: true
+    
+# THYMELEAF (ThymeleafAutoConfiguration)
+  thymeleaf:
+    cache:  false
+
+# DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+#MYSQL
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cms68?useUnicode=true&amp;characterEncoding=utf-8
+    username: root
+    password: 
+#ORACLE
+#   driver-class-name: 
+#   url: 
+#   username: 
+#   password: 
+#H2
+#   schema: classpath:/data/h2/schema.sql
+#   data: classpath:/sql/h2/data.sql
+#   driver-class-name: org.h2.Driver
+#   url: jdbc:h2:file:~/.h2/li;AUTO_SERVER=TRUE;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#   username: sa
+#   password: 
+
+    max-idle: 12
+    min-idle: 8
+    initial-size: 10
+
+# JPA (JpaBaseConfiguration, HibernateJpaAutoConfiguration)
+# jpa:
+#    open-in-view: false
+#    show-sql: true
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    database: H2
+#    generate-ddl: false
+#    hibernate.ddl-auto: update
+
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+
+# BANNER
+banner:
+  charset: UTF-8
+  location: classpath:banner.txt
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    
+# LOGGING
+logging:
+  path: target/ooJolog
+  
+#ooJo:
+#  pconf:
+#    readFixedRateTime: yes
+#    reUrl: http://86.0.17.16/serviceweb
